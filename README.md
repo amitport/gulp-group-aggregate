@@ -39,7 +39,7 @@ gulp.task('folderWrap', function(){
 
 ## API
 
-gulp-group-aggregate is called with and object containing two functions: __group__ and __aggregate__.
+gulp-group-aggregate is called with an _options_ object containing two functions: _group_ and _aggregate_.
 
 ### options.group(obj)
 
