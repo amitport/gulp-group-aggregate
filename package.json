@@ -1,0 +1,29 @@
+{
+  "name": "gulp-group-aggregate",
+  "version": "0.0.1",
+  "description": "a group and aggregate plugin for gulp (and other streams)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "./node_modules/.bin/coffee -c ./index.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitport/gulp-group-aggregate.git"
+  },
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": "Amit Portnoy <amit.portnoy@gmail.com> (https://github.com/amitport)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amitport/gulp-group-aggregate/issues"
+  },
+  "homepage": "https://github.com/amitport/gulp-group-aggregate",
+  "dependencies": {
+    "highland": "^1.22.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1"
+  }
+}
