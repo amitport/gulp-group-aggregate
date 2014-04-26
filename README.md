@@ -1,4 +1,4 @@
-# gulp-group-aggregate [![NPM version][npm-image]][npm-url]
+# gulp-group-aggregate [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url]
 > a group and aggregate plugin for gulp (and other streams)
 
 ## Usage
@@ -49,5 +49,7 @@ Receives an object from the stream and returns a string which represents its gro
 
 Receives a group string as returned from __group__ calls and an array of all the objects associated with it. Returns a single object to be passed through the stream.
 
+[travis-url]: http://travis-ci.org/amitport/gulp-group-aggregate
+[travis-image]: https://secure.travis-ci.org/amitport/gulp-group-aggregate.png?branch=master
 [npm-url]: https://npmjs.org/package/gulp-group-aggregate
 [npm-image]: https://badge.fury.io/js/gulp-group-aggregate.png
