@@ -1,4 +1,4 @@
-# gulp-group-aggregate
+# gulp-group-aggregate [![NPM version][npm-image]][npm-url]
 > a group and aggregate plugin for gulp (and other streams)
 
 ## Usage
@@ -49,3 +49,5 @@ Receives an object from the stream and returns a string which represents its gro
 
 Receives a group string as returned from __group__ calls and an array of all the objects associated with it. Returns a single object to be passed through the stream.
 
+[npm-url]: https://npmjs.org/package/gulp-group-aggregate
+[npm-image]: https://badge.fury.io/js/gulp-group-aggregate.png
