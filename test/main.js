@@ -9,7 +9,7 @@ describe('gulp-group-aggregate', function() {
 				group: function (obj){return obj.str;}, 
 				aggregate: function (str, objs){
 					assert.equal(objs.length, 2, 'there should be 2 groups');
-					return {str:str,sum:objs[0].val+objs[1].val};
+					return {contents: new Buffer(JSON.stringify({str:str, sum:objs[0].val+objs[1].val}))};
 				}
 			});
 
@@ -20,6 +20,7 @@ describe('gulp-group-aggregate', function() {
 
 			var count = 0;
 			stream.on('data', function(data){
+				data = JSON.parse(data.contents.toString());
 				count++;
 				if (data.str === 'a') {
 					assert.equal(data.sum, 4, 'aggregate should calculate the sum');
