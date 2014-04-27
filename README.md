@@ -38,13 +38,13 @@ gulp.task('folderWrap', function(){
 
 ## API
 
-gulp-group-aggregate is called with an _options_ object containing two functions: _group_ and _aggregate_.
+gulp-group-aggregate is a ```function(options)``` that returns a ```read-write stream```. The _options_ argument should include two functions: _group_ and _aggregate_.
 
 #### options.group
 
 Type: ```function(File)``` returns ```string```
 
-Receives an [vinyl](https://github.com/wearefractal/vinyl) from the stream and returns a string which represents its group. 
+Receives a [vinyl](https://github.com/wearefractal/vinyl) from the stream and returns a string which represents its group. 
 
 #### options.aggregate
 
