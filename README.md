@@ -18,7 +18,7 @@ var groupAggregate = require('gulp-group-aggregate');
 var processFiles = function (files) {...}; 
 
 gulp.task('folderWrap', function(){
-  gulp.src(['all/*/*'])
+  gulp.src(...)
   	.pipe(groupAggregate({
   		group: function (file){
   			// group by the directory name of each file
@@ -32,7 +32,7 @@ gulp.task('folderWrap', function(){
   			};
   		}
   	}));
-    .pipe(gulp.dest('build/folder.txt'));
+    .pipe(gulp.dest(...));
 });
 ```
 
