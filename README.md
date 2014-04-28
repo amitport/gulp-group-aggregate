@@ -1,4 +1,4 @@
-# gulp-group-aggregate [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url]
+# gulp-group-aggregate [![NPM version][npm-image]][npm-url] [![NPM dep][npm-dep-image]][npm-dep-url] [![Build status][travis-image]][travis-url]
 > a group and aggregate plugin for gulp
 
 ## Usage
@@ -53,6 +53,9 @@ Type: ```function(string, File[])``` returns ```File.options```
 Receives a group string as returned from _group_ calls and an array of all the files associated with it. Returns a [vinyl constructor.options](https://github.com/wearefractal/vinyl#constructoroptions) object. The options will be used to construct a file which will be pushed through the stream.
 
 [travis-url]: http://travis-ci.org/amitport/gulp-group-aggregate
-[travis-image]: https://secure.travis-ci.org/amitport/gulp-group-aggregate.png?branch=master
+[travis-image]: https://secure.travis-ci.org/amitport/gulp-group-aggregate.svg?branch=master
 [npm-url]: https://npmjs.org/package/gulp-group-aggregate
-[npm-image]: https://badge.fury.io/js/gulp-group-aggregate.png
+[npm-image]: https://badge.fury.io/js/gulp-group-aggregate.svg
+[npm-dep-url]: https://david-dm.org/amitport/gulp-group-aggregate
+[npm-dep-image]: https://david-dm.org/amitport/gulp-group-aggregate.svg
+
