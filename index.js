@@ -30,7 +30,7 @@
   module.exports = function(_arg) {
     var aggregate, group;
     group = _arg.group, aggregate = _arg.aggregate;
-    return _.pipeline(_.pipeline(), _.group(group), _.map(function(grouped) {
+    return _.pipeline(_.group(group), _.map(function(grouped) {
       var objects;
       return _((function() {
         var _results;

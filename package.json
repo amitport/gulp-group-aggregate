@@ -1,6 +1,6 @@
 {
   "name": "gulp-group-aggregate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a group and aggregate plugin for gulp (and other streams)",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/amitport/gulp-group-aggregate",
   "dependencies": {
-    "highland": "^1.22.0",
+    "highland": "^1.23.0",
     "vinyl": "^0.2.3"
   },
   "devDependencies": {

@@ -21,10 +21,6 @@ File = require('vinyl')
 ###
 module.exports = ({group, aggregate}) -> 
 	_.pipeline(
-			# A bug in highland makes _.pipeline ignore it's first argument (https://github.com/caolan/highland/issues/68)
-			# so we're just putting another empty pipeline here
-			_.pipeline() 
-		, 
 			_.group(group)
 		,
 			_.map (grouped) -> _(new File(aggregate(group, objects)) for group, objects of grouped)
