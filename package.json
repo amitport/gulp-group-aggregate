@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/amitport/gulp-group-aggregate",
   "dependencies": {
+    "bluebird": "^3.3.4",
     "highland": "^1.24.0",
     "vinyl": "^0.2.3"
   },

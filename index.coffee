@@ -2,6 +2,7 @@
 
 _ = require('highland')
 File = require('vinyl')
+Promise = require('bluebird')
 ###
 @callback groupBy
 @param {*} obj - gets any object from the stream 
@@ -19,11 +20,15 @@ File = require('vinyl')
 @param {groupBy} 
 @param {aggregate}
 ###
-module.exports = ({group, aggregate}) -> 
+module.exports = ({group, aggregate}) ->
+	aggregate = Promise.method(aggregate)
 	_.pipeline(
 			_.group(group)
 		,
-			_.map (grouped) -> _(new File(aggregate(group, objects)) for group, objects of grouped)
+			_.map (grouped) ->
+				_(
+					_(aggregate(group, objects).then((aggregated) ->	new File(aggregated))) for group, objects of grouped
+				).sequence()
 		,
 			_.sequence()
 	)
