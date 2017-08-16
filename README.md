@@ -48,9 +48,9 @@ Receives a [vinyl](https://github.com/wearefractal/vinyl) from the stream and re
 
 #### options.aggregate
 
-Type: ```function(string, File[])``` returns ```File.options```
+Type: ```function(string, File[])``` returns ```File.options or {falsy value} or Promise<File.options or {falsy value}>``` 
 
-Receives a group string as returned from _group_ calls and an array of all the files associated with it. Returns a [vinyl constructor.options](https://github.com/wearefractal/vinyl#constructoroptions) object. The options will be used to construct a file which will be pushed through the stream.
+Receives a group string as returned from _group_ calls and an array of all the files associated with it. Returns a [vinyl constructor.options](https://github.com/wearefractal/vinyl#constructoroptions) object. The options will be used to construct a file which will be pushed through the stream. The callback can also return a Promise that evalutes a [vinyl constructor.options](https://github.com/wearefractal/vinyl#constructoroptions) object. Additionally, if it or the promise returns a falsy value the group will be filtered out.
 
 [travis-url]: http://travis-ci.org/amitport/gulp-group-aggregate
 [travis-image]: https://secure.travis-ci.org/amitport/gulp-group-aggregate.svg?branch=master
