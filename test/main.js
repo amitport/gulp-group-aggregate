@@ -36,5 +36,40 @@ describe('gulp-group-aggregate', function() {
 			});
 			stream.end();
 		})
+
+    it("should filter when 'aggregate' returns a falsy value", function(done) {
+      var stream = groupAggregatePlugin({
+        group: function (obj){return obj.str;},
+        aggregate: function (str, objs){
+        	if (str !== 'a') {
+          	assert.equal(objs.length, 2, 'there should be 2 groups');
+          	return {contents: new Buffer(JSON.stringify({str:str, sum:objs[0].val+objs[1].val}))};
+          }
+        }
+      });
+
+      stream.write({str: 'a', val: 1});
+      stream.write({str: 'b', val: 2});
+      stream.write({str: 'a', val: 3});
+      stream.write({str: 'b', val: 5});
+
+      var count = 0;
+      stream.on('data', function(data){
+        data = JSON.parse(data.contents.toString());
+        count++;
+        if (data.str === 'a') {
+          assert.fail("aggregate should have filtered 'a'")
+        } else if (data.str === 'b') {
+          assert.equal(data.sum, 7, 'aggregate should calculate the sum');
+        } else {
+          assert.fail(data.str, "'a' or 'b'", 'aggregate should only create object with an existing str')
+        }
+      });
+      stream.on('end', function(){
+        assert.equal(count, 1, 'aggregate should create exactly one objects');
+        done();
+      });
+      stream.end();
+    })
 	});
 });

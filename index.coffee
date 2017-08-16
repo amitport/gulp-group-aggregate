@@ -27,8 +27,10 @@ module.exports = ({group, aggregate}) ->
 		,
 			_.map (grouped) ->
 				_(
-					_(aggregate(group, objects).then((aggregated) ->	new File(aggregated))) for group, objects of grouped
+					_(aggregate(group, objects).then((aggregated) ->	aggregated && new File(aggregated))) for group, objects of grouped
 				).sequence()
 		,
 			_.sequence()
+		,
+			_.filter((file) -> file)
 	)
