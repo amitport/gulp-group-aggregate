@@ -1,6 +1,6 @@
 {
   "name": "gulp-group-aggregate",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "a group and aggregate plugin for gulp (and other streams)",
   "main": "index.js",
   "scripts": {
